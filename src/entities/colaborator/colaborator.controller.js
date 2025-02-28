@@ -1,5 +1,6 @@
 'use strict';
 import { PrismaClient } from "@prisma/client";
+import { generateJWT } from "../../helpers/generate-jwt.js";
 const prisma = new PrismaClient();
 
 export const postColaborator = async (req = Request, res = Response) => {
@@ -96,6 +97,26 @@ export const deleteColaborator = async (req = Request, res = Response) => {
             colaboratorDelete
         });
     } catch (error) {
+        console.log(error);
+    }
+}
+
+export const loginColaborator = async (req = Request, res = Response) => {
+    try {
+        const { IDCOLABORADOR, EDAD } = req.body;
+        const colaborator = await prisma.colaborador.findUnique({
+            where: { IDCOLABORADOR: parseInt(IDCOLABORADOR), EDAD: parseInt(EDAD) }
+        })
+
+        if(!colaborator){
+            return res.status(401).json({msg: "El colaborador no existe o la edad es incorrecta. Intenta de nuevo"}); 
+        }
+        const token = await generateJWT(IDCOLABORADOR);
+        res.status(200).json({
+            msg:"Login correcto",
+            token
+        });
+    }catch(error){
         console.log(error);
     }
 }

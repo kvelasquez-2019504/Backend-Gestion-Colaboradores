@@ -1,11 +1,16 @@
 "use strict";
 import { PrismaClient } from '@prisma/client'
 import { PRISMA_ERRORS, GENERAL_ERRORS } from './prismaErrors.js';
+const prisma = new PrismaClient();
 export const connectDBMysql = async () => {
     try {
-        const prisma = new PrismaClient();
         await prisma.$connect();
-        console.log("Database connected");
+        console.log('Conexión a la base de datos establecida con Prisma.');
+
+        // Crear la base de datos si no existe
+        await prisma.$executeRaw`CREATE DATABASE IF NOT EXISTS test;`;
+        console.log(`Base de datos creada o verificada.`);
+        await prisma.$disconnect();
     } catch (error) {
         const ERROR = PRISMA_ERRORS;
         switch (error.code) {
