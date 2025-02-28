@@ -3,8 +3,10 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export const addColaborator = async (req = Request, res = Response) => {
-    const { NOMBRE, APELLIDO, DIRECCION, EDAD, PROFESION, ESTADOCIVIL } = req.body;
-
+   try {
+    const { NOMBRE, APELLIDO, DIRECCION, PROFESION, ESTADOCIVIL } = req.body;
+    let { EDAD } = req.body;
+    EDAD = parseInt(EDAD);
     const colaborator = await prisma.colaborador.create({
         data: {
             NOMBRE,
@@ -16,14 +18,21 @@ export const addColaborator = async (req = Request, res = Response) => {
         }
     });
 
-    res.json(colaborator);
+    res.status(200).json({
+        msg: "Se ha añadido un colaborador",
+        colaborator
+      });
+   } catch (error) {
+    console.log(error)
+   }
 }
 
 export const getColaborators = async (req = Request, res = Response) => {
     try {
         const colaborators = await prisma.colaborador.findMany();
         res.status(200).json({
-            msg: `HOla`,
+            msg: `Se han obtenido los colaboradores`,
+            colaborators
           });
     } catch (error) {
         console.log(error);
