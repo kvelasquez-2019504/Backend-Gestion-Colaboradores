@@ -35,7 +35,10 @@ export const getColaborators = async (req = Request, res = Response) => {
         const [colaborators, totalColaborators] = await prisma.$transaction([
             prisma.colaborador.findMany({
                 skip,
-                take: parseInt(pageSize)
+                take: parseInt(pageSize),
+                orderBy: {
+                    IDCOLABORADOR: "desc"
+                }
             }),
             prisma.colaborador.count()
         ])
@@ -47,6 +50,21 @@ export const getColaborators = async (req = Request, res = Response) => {
             page,
             totalColaborators,
             totalPages
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const getColaboartorById = async (req = Request, res = Response) => {
+    try {
+        const { idColaborador} = req.params;
+        const colaborator= await prisma.colaborador.findUnique({
+            where: { IDCOLABORADOR: parseInt(idColaborador) }
+        })
+        res.status(200).json({
+            msg: `Se ha encontrado el colaborador`,
+            colaborator            
         });
     } catch (error) {
         console.log(error);
@@ -111,6 +129,7 @@ export const loginColaborator = async (req = Request, res = Response) => {
         if(!colaborator){
             return res.status(401).json({msg: "El colaborador no existe o la edad es incorrecta. Intenta de nuevo"}); 
         }
+
         const token = await generateJWT(IDCOLABORADOR);
         res.status(200).json({
             msg:"Login correcto",

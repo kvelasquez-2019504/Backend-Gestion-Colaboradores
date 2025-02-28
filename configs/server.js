@@ -4,7 +4,7 @@ import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
 import { connectDBMysql } from "./connectionDB.js";
-import colaboratorRoutes  from "../src/entities/colaborator/colaborator.routes.js";
+import colaboratorRoutes from "../src/entities/colaborator/colaborator.routes.js";
 
 class Server {
     constructor() {
@@ -29,6 +29,11 @@ class Server {
     }
     routes() {
         this.app.use(this.colaboratorsPath, colaboratorRoutes);
+        this.app.use((req, res, next) => {
+            res.status(404).json({
+                error: 'Ruta no encontrada',
+            });
+        });
     }
 
     listen() {

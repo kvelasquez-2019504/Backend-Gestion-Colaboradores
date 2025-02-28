@@ -4,6 +4,7 @@ import { PRISMA_ERRORS, GENERAL_ERRORS } from './prismaErrors.js';
 const prisma = new PrismaClient();
 export const connectDBMysql = async () => {
     try {
+        // Conectar a la base de datos
         await prisma.$connect();
         console.log('Conexión a la base de datos establecida con Prisma.');
 

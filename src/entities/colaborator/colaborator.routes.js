@@ -3,7 +3,7 @@ import {Router } from "express";
 import {check } from "express-validator";
 import { validateFields } from "../../middlewares/validate-fields.js";
 import { getColaborators, postColaborator, putColaborator,
-    deleteColaborator, loginColaborator } from "./colaborator.controller.js";
+    deleteColaborator, loginColaborator, getColaboartorById } from "./colaborator.controller.js";
 import { existsColaborator } from "../../helpers/db-validator.js";
 import { validateJWT } from "../../middlewares/validate-jwt.js";
 
@@ -22,6 +22,12 @@ router.post("/post/colaborador",[
     validateFields
 ], postColaborator);
 
+router.get("/find/colaborador/:idColaborador",[
+    validateJWT,
+    check("idColaborador").custom(existsColaborator),
+    validateFields
+], getColaboartorById);
+
 router.put("/put/colaborador/:idColaborador",[
     validateJWT,
     check("idColaborador").custom(existsColaborator),
@@ -39,7 +45,7 @@ router.delete("/delete/colaborador/:idColaborador",[
     validateFields
 ], deleteColaborator);
 
-router.get("/login", [
+router.post("/login", [
     check("IDCOLABORADOR", "El id es obligatorio y debe ser un número").not().isEmpty().isInt(),
     check("EDAD", "La edad es obligatoria").isInt({ min: 1, max: 120 }).withMessage("La edad debe estar entre 1 y 120"),
     validateFields
