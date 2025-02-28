@@ -1,0 +1,34 @@
+{
+  "name": "backend-gestion-colaboradores",
+  "version": "1.0.0",
+  "description": "Backend con CRUD de colaboradores en MYSQL",
+  "homepage": "https://github.com/kvelasquez-2019504/Backend-Gestion-Colaboradores#readme",
+  "bugs": {
+    "url": "https://github.com/kvelasquez-2019504/Backend-Gestion-Colaboradores/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kvelasquez-2019504/Backend-Gestion-Colaboradores.git"
+  },
+  "license": "ISC",
+  "author": "Kenneth Velasquez",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "@prisma/client": "6.4.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "prisma": "^6.4.1"
+  }
+}
