@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "6c62030b-c19a-4353-bb94-cbb21bd57445",
+		"name": "Gestión de Colaboradores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32786726"
+	},
+	"item": [
+		{
+			"name": "Get All Colaboradores",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENvbGFib3JhdG9yIjoxLCJpYXQiOjE3NDA5NzUxMzEsImV4cCI6MTc0MDk4NTkzMX0.gnl-iILH2TVKCvgJgsW9SRVbHgG7Xe26oj73ERsogQ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/get/colaborador?page=1&pageSize=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"get",
+						"colaborador"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Colaborador By ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENvbGFib3JhdG9yIjoxLCJpYXQiOjE3NDA5NzUxMzEsImV4cCI6MTc0MDk4NTkzMX0.gnl-iILH2TVKCvgJgsW9SRVbHgG7Xe26oj73ERsogQ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/find/colaborador/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"find",
+						"colaborador",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IDCOLABORADOR\":1,\r\n    \"EDAD\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Colaborador",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENvbGFib3JhdG9yIjoxLCJpYXQiOjE3NDA5NzUxMzEsImV4cCI6MTc0MDk4NTkzMX0.gnl-iILH2TVKCvgJgsW9SRVbHgG7Xe26oj73ERsogQ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"NOMBRE\":\"Juan\",\r\n    \"APELLIDO\":\"Lopez\",\r\n    \"DIRECCION\":\"Mi casa\",\r\n    \"EDAD\":55,\r\n    \"PROFESION\":\"Desarrollador\",\r\n    \"ESTADOCIVIL\":\"Soltero\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/post/colaborador",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"post",
+						"colaborador"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Colaborador",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENvbGFib3JhdG9yIjoxLCJpYXQiOjE3NDA5NzQ2MTIsImV4cCI6MTc0MDk4NTQxMn0.v7_EYl6rLughM_mKeT_iBmk-U_yfapUY3Ul3k0mSoQo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"NOMBRE\":\"Carlos\",\r\n    \"APELLIDO\":\"Perez\",\r\n    \"DIRECCION\":\"Su casa\",\r\n    \"EDAD\":\"2\",\r\n    \"PROFESION\":\"Abogado\",\r\n    \"ESTADOCIVIL\":\"Soltero\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/put/colaborador/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"put",
+						"colaborador",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Colaborador",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENvbGFib3JhdG9yIjoxLCJpYXQiOjE3NDA5NzUxMzEsImV4cCI6MTc0MDk4NTkzMX0.gnl-iILH2TVKCvgJgsW9SRVbHgG7Xe26oj73ERsogQ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/delete/colaborador/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"delete",
+						"colaborador",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
