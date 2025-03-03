@@ -13,6 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+
 model Colaborador{
   IDCOLABORADOR Int @id @default(autoincrement())
   NOMBRE String @db.VarChar(45)

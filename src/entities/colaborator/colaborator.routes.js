@@ -9,7 +9,20 @@ import { validateJWT } from "../../middlewares/validate-jwt.js";
 
 const router = Router();
 
-router.get("/get/colaborador",validateJWT ,getColaborators);
+router.post("/login", [
+    check("IDCOLABORADOR", "El id es obligatorio y debe ser un número").not().isEmpty().isInt(),
+    check("EDAD", "La edad es obligatoria").isInt({ min: 1, max: 120 }).withMessage("La edad debe estar entre 1 y 120"),
+    validateFields
+], loginColaborator);
+
+
+router.get("/get/colaborador", validateJWT, getColaborators);
+
+router.get("/find/colaborador/:idColaborador",[
+    validateJWT,
+    check("idColaborador").custom(existsColaborator),
+    validateFields
+], getColaboartorById);
 
 router.post("/post/colaborador",[
     validateJWT,
@@ -22,11 +35,6 @@ router.post("/post/colaborador",[
     validateFields
 ], postColaborator);
 
-router.get("/find/colaborador/:idColaborador",[
-    validateJWT,
-    check("idColaborador").custom(existsColaborator),
-    validateFields
-], getColaboartorById);
 
 router.put("/put/colaborador/:idColaborador",[
     validateJWT,
@@ -43,12 +51,7 @@ router.delete("/delete/colaborador/:idColaborador",[
     validateJWT,
     check("idColaborador").custom(existsColaborator),
     validateFields
-], deleteColaborator);
-
-router.post("/login", [
-    check("IDCOLABORADOR", "El id es obligatorio y debe ser un número").not().isEmpty().isInt(),
-    check("EDAD", "La edad es obligatoria").isInt({ min: 1, max: 120 }).withMessage("La edad debe estar entre 1 y 120"),
-    validateFields
-], loginColaborator);
+], 
+deleteColaborator);
 
 export default router;

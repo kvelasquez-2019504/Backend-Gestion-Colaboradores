@@ -47,5 +47,6 @@ export const GENERAL_ERRORS = {
     GATEWAY_TIMEOUT: 'Tiempo de espera agotado',
     NETWORK_ERROR: 'Error de red',
     UNKNOWN_ERROR: 'Error desconocido',
+    SERVER_ERROR: 'Error del servidor',
   };
   
