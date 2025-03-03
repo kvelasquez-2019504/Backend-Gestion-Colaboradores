@@ -91,7 +91,15 @@ Backend-Gestion-Colaboradores/
 ## Documentación de los Endpoints de la Aplicación
 Este proyecto cuenta con documentación gráfica implementando Swagger.
 <ul>
-    <li>Si configuro un puerto en especifico ingrese a http://localhost:PORT/documentation</li>
-    <li>Si no configuró un puerto en específico ingrese a http://localhost:8000/documentation</li>
+    <li>Si configuro un puerto en especifico ingrese a
+        ```bash 
+        http://localhost:PORT/documentation
+        ```
+    </li>
+    <li>Si no configuró un puerto en específico ingrese a 
+        ```bash 
+        http://localhost:8000/documentation
+        ```
+    </li>
 </ul> 
 
