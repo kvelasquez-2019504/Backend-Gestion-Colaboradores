@@ -63,28 +63,28 @@ SECRET_KEY_JWT=example
 ```bash
 Backend-Gestion-Colaboradores/
 ├──configs/                        # Configuraciones del servidor  
-|  ├──connectionDB.js             # Lógica de configuración de la Base de Datos
-|  ├──prismaErrors.js             # Lógica de errores comunes en prisma y backend
-|  ├──server.js                   # Servidor principal de la aplicación
-|  └──swaggerConfig.js            # Configuraciones de SwaggerUI para los endpoints
+|  ├──connectionDB.js                # Lógica de configuración de la Base de Datos
+|  ├──prismaErrors.js                # Lógica de errores comunes en prisma y backend
+|  ├──server.js                      # Servidor principal de la aplicación
+|  └──swaggerConfig.js               # Configuraciones de SwaggerUI para los endpoints
 ├──prisma/                         # Directorio del schema principal de prisma
-|  └──schema.prisma.js             # Configuración para la migración de Base de Datos con Prisma
+|  └──schema.prisma.js               # Configuración para la migración de Base de Datos con Prisma
 ├──src/
 |    ├── entities/                  # Directorio que aloja las entidades de la base de datos
-|    │   └── colaborator/           # Directorio encargado de la entidad Colaborador
+|    │   └── colaborator/              # Directorio encargado de la entidad Colaborador
 |    │       └── colaborator.controller.js  # Lógica encargada de la entidad Colaborador
 |    │       └── colaborator.routes.js      # Rutas de Colaborador
 |    ├── middlewares/
-|    │   └── validate-jwt.js       # Middleware para validar JWT
+|    │   └── validate-jwt.js         # Middleware para validar JWT
 |    │   └── validate-fields.js      # Middleware para validar datos
-|    |   └── limit-petitions.js     # Middleware para limitar las peticiones
+|    |   └── limit-petitions.js      # Middleware para limitar las peticiones
 |    └── helpers/
 |        └── generate-jwt.js       # Generador de token JWT
 |        └── db-validator.js       # Lógica que valida información de la Base de datos
-├──.env                           # Archivo para las variables de entorno del proyecto
+├──.env                         # Archivo para las variables de entorno del proyecto
 ├──.gitignore                   # Archivo para la gestión de archivos del repositorio
 ├──index.js                     # Lógica principal para ejecutar el Servidor.
 ├──LICENSE                      # Licencia de distribución del proyecto
-├──package.json # Archivo de configuración y dependencias necesarias para ejecutar el proyecto.
+├──package.json                 # Archivo de configuración y dependencias necesarias para ejecutar el proyecto.
 └──README.md                    # Archivo de documentación general del proyecto e instrucciones de configuración.
 ```
