@@ -53,11 +53,11 @@ SECRET_KEY_JWT=example
     ```bash
     npm run dev
     ```
-    ```
 - Ejecutar el servidor en producción:
     ```bash
     npm start
     ```
+```
 
 # Estructura del proyecto Gestion
 ```bash
