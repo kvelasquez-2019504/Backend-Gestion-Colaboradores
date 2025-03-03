@@ -7,7 +7,7 @@ Este proyecto es una prueba técnica para la gestión de colaboradores.
 
 1. Clona el repositorio:
     ```bash
-    git clone [https://github.com/tu-usuario/Backend-Gestion-Colaboradores.git](https://github.com/kvelasquez-2019504/Backend-Gestion-Colaboradores.git)
+    git clone https://github.com/kvelasquez-2019504/Backend-Gestion-Colaboradores.git
     ```
 2. Navega al directorio del proyecto:
     ```bash
