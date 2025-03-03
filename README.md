@@ -89,11 +89,9 @@ Backend-Gestion-Colaboradores/
 └──README.md                    # Archivo de documentación general del proyecto e instrucciones de configuración.
 ```
 ## Documentación de los Endpoints de la Aplicación
-Este proyecto cuenta con documentación gráfica implementando Swagger, la puede consultar en 
-```bash
-    http://localhost:PORT/documentation
-````
-Si no configuró un puerto en específico ingrese a
-```bash
-    [http://localhost:8000/documentation](http://localhost:8000/documentation)
-````
+Este proyecto cuenta con documentación gráfica implementando Swagger.
+<ul>
+    <li>Si configuro un puerto en especifico ingrese a http://localhost:PORT/documentation</li>
+    <li>Si no configuró un puerto en específico ingrese a [http://localhost:8000/documentation](http://localhost:8000/documentation)</li>
+</ul> 
+
