@@ -46,7 +46,7 @@ DATABASE_PORT=0000
 
 SECRET_KEY_JWT=example
 # Clave secreta para la generación de tokens JWT.
-
+```
 ## Comandos
 
 - Iniciar el servidor de desarrollo:
@@ -57,7 +57,7 @@ SECRET_KEY_JWT=example
     ```bash
     npm start
     ```
-```
+
 
 # Estructura del proyecto Gestion
 ```bash
