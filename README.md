@@ -92,7 +92,9 @@ Backend-Gestion-Colaboradores/
 Este proyecto cuenta con documentación gráfica implementando Swagger.
 <ul>
     <li>Si configuro un puerto en especifico ingrese a <strong>http://localhost:PORT/documentation</strong>    </li>
-    <li>Si no configuró un puerto en específico ingrese a <strong>http://localhost:8000/documentation</strong>  </li>
+    <li>Si no configuró un puerto en específico ingrese a <strong>http://localhost:8000/documentation</strong>  
+        ![image](https://github.com/user-attachments/assets/7c380383-5e96-485a-b580-ab1c13424734)
+    </li>
 </ul> 
 
 
